@@ -16,7 +16,7 @@
     --body-color-muted: #313244;
     --link-color: #8be9fd;
     --unread-marker-color: #50fa7b;
-    --date-marker-color: #313244;
+    --date-marker-color: #f2cdcd;
     --highlight-bg-color: #45475a;
     --highlight-color: #cba6f7;
     --highlight-border-color: #cba6f7;
@@ -88,7 +88,7 @@ kbd {
 
 .channel-list-item.active,
 #footer button.active {
-    background-color: var(--body-color-muted);
+    background-color: var(--highlight-bg-color);
 }
 
 #chat .count::before,
@@ -193,7 +193,7 @@ body {
 }
 
 #sidebar .chan.active {
-    background-color: var(--window-bg-color);
+    background-color: var(--background-light-color);
 }
 
 #footer {
@@ -213,7 +213,7 @@ body {
 #sidebar,
 #footer {
     color: var(--body-color);
-    background-color: var(--background-light-color);
+    background-color: #313244;
 }
 
 #chat .userlist .search,
@@ -261,14 +261,14 @@ body {
 #chat.colored-nicks .user.color-14,
 #chat.colored-nicks .user.color-22,
 #chat.colored-nicks .user.color-30 {
-    color: #89dceb;
+    color: #94e2d5;
 }
 
 #chat.colored-nicks .user.color-7,
 #chat.colored-nicks .user.color-15,
 #chat.colored-nicks .user.color-23,
 #chat.colored-nicks .user.color-31 {
-    color: #313244;
+    color: #89b4fa;
 }
 
 #chat.colored-nicks .user.color-8,

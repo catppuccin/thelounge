@@ -1,0 +1,33 @@
+{
+  "name": "thelounge-theme-catppuccin-mocha",
+  "version": "1.0.2",
+  "description": "Soothing pastel theme for The Lounge",
+  "main": "package.json",
+  "thelounge": {
+    "name": "Catppuccin Mocha",
+    "type": "theme",
+    "css": "catppuccin_mocha_theme.css"
+  },
+  "devDependencies": {
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0"
+  },
+  "scripts": {
+    "test": "stylelint catppuccin_mocha_theme.css",
+    "format": "stylelint --fix catppuccin_mocha_theme.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperreal64/thelounge-theme-catppuccin-mocha.git"
+  },
+  "keywords": [
+    "thelounge",
+    "thelounge-theme"
+  ],
+  "author": "hyperreal64",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyperreal64/thelounge-theme-catppuccin-mocha/issues"
+  },
+  "homepage": "https://github.com/hyperreal64/thelounge-theme-catppuccin-mocha#readme"
+}
