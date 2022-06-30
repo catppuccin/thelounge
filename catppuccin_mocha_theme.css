@@ -15,7 +15,7 @@
     --body-color: #cdd6f4;
     --body-color-muted: #313244;
     --link-color: #8be9fd;
-    --unread-marker-color: #50fa7b;
+    --unread-marker-color: #a6e3a1;
     --date-marker-color: #f2cdcd;
     --highlight-bg-color: #45475a;
     --highlight-color: #cba6f7;
@@ -73,6 +73,7 @@ i.hostmask {
     font-size: 90%;
     font-style: normal;
     opacity: 0.7;
+    color: #b4befe;
 }
 
 .irc-monospace,
@@ -104,6 +105,14 @@ kbd {
 #chat .msg[data-type="mode_channel"] .from::before,
 #chat .msg[data-type="join"] .from::before {
     color: var(--unread-marker-color);
+}
+
+#chat .msg[data-type="topic"] .from,
+#chat .msg[data-type="mode_channel"] .from,
+#chat .msg[data-type="join"] .from,
+#chat .msg[data-type="part"] .from,
+#chat .msg[data-type="quit"] .from {
+    color: #585b70;
 }
 
 #chat .msg[data-type="part"] .from::before,
@@ -142,6 +151,7 @@ body {
 #chat .content,
 #chat .userlist {
     border-color: var(--background-light-color);
+    color: var(--body-color);
 }
 
 .context-menu-item,
@@ -287,7 +297,7 @@ body {
 #chat .toggle-content,
 #chat .toggle-text .body,
 #chat .toggle-type-error {
-    color: var(--body-color-muted);
+    color: #585b70;
 }
 
 #chat .channel .msg.highlight .time {
@@ -299,7 +309,7 @@ body {
 }
 
 #chat table.channel-list td {
-    color: var(--body-color-muted);
+    color: var(--body-color);
 }
 
 #chat table.channel-list th,

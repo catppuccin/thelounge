@@ -1,6 +1,6 @@
 {
   "name": "thelounge-theme-catppuccin-mocha",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "description": "Soothing pastel theme for The Lounge",
   "main": "package.json",
   "thelounge": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hyperreal64/thelounge-theme-catppuccin-mocha.git"
+    "url": "git+https://github.com/catppuccin/thelounge.git"
   },
   "keywords": [
     "thelounge",
@@ -27,7 +27,7 @@
   "author": "hyperreal64",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hyperreal64/thelounge-theme-catppuccin-mocha/issues"
+    "url": "https://github.com/catppuccin/thelounge/issues"
   },
-  "homepage": "https://github.com/hyperreal64/thelounge-theme-catppuccin-mocha#readme"
+  "homepage": "https://github.com/catppuccin/thelounge#readme"
 }
