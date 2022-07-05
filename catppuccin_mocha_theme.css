@@ -92,7 +92,15 @@ kbd {
     background-color: var(--highlight-bg-color);
 }
 
-#chat .count::before,
+.channel-list-item:hover {
+    background-color: #585b70;
+}
+
+#chat .count:before,
+#chat .user-mode:before {
+    color: #6c7086;
+}
+
 #form #submit,
 #form #upload,
 #chat button.menu,
@@ -120,6 +128,21 @@ kbd {
     color: var(--background-error);
 }
 
+#chat .msg[data-type="action"] .content {
+    color: #fab387;
+}
+
+#chat .msg[data-type="condensed"] .content,
+#chat .msg[data-type="away"] .content,
+#chat .msg[data-type="back"] .content,
+#chat .msg[data-type="join"] .content,
+#chat .msg[data-type="mode_channel"] .content,
+#chat .msg[data-type="part"] .content,
+#chat .msg[data-type="quit"] .content,
+#chat .msg[data-type="topic"] .content,
+#chat .msg[data-type="topic_set_by"] .content {
+    color: #45475a;
+}
 #context-menu,
 .textcomplete-menu {
     background-color: var(--window-bg-color);
@@ -152,6 +175,10 @@ body {
 #chat .userlist {
     border-color: var(--background-light-color);
     color: var(--body-color);
+}
+
+#chat .header .topic {
+    color: #6c7086;
 }
 
 .context-menu-item,
@@ -294,9 +321,13 @@ body {
     background-color: var(--background-light-color);
 }
 
-#chat .toggle-content,
+#chat .toggle-content .body,
 #chat .toggle-text .body,
 #chat .toggle-type-error {
+    color: #6c7086;
+}
+
+#chat .time {
     color: #585b70;
 }
 
@@ -305,7 +336,7 @@ body {
 }
 
 #chat .channel .highlight .toggle-content {
-    background-color: var(--body-bg-color);
+    background-color: #6c7086;
 }
 
 #chat table.channel-list td {
