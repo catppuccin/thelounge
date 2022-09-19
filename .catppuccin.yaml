@@ -1,0 +1,17 @@
+# A Catppuccin RC file for The Lounge. In beta, specs may change.
+app_name: The Lounge
+binary_name: thelounge
+installation:
+	location:
+		macos: ~/.thelounge/
+		linux: ~/.thelounge/
+		windows: "%appdata%/thelounge/"
+	flavours:
+		all:
+			default:
+				- themes
+		mocha:
+			default:
+				- themes/catppuccin_mocha_theme.css
+	to: themes/
+	one_flavour: true
