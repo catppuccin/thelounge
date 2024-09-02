@@ -1,0 +1,403 @@
+/*!
+ * Catppuccin Latte theme for TheLounge by hyperreal
+ *
+ * Repo: https://github.com/catppuccin/thelounge/
+ */
+
+/* Samsung Internet and Microsoft Edge (yes, both of them use -webkit- prefix) */
+::-webkit-input-placeholder {
+    color: var(--body-color-muted);
+}
+:root {
+    --body-bg-color: #eff1f5;
+    --window-bg-color: #eff1f5;
+    --body-color: #4c4f69;
+    --body-color-muted: #8c8fa1;
+    --link-color: #8839ef;
+    --unread-marker-color: #40a02b;
+    --button-color: #8839ef;
+    --date-marker-color: #dd7878;
+    --highlight-bg-color: #bcc0cc;
+    --highlight-color: #8839ef;
+    --highlight-border-color: #8839ef;
+    --background-light-color: #bcc0cc;
+    --background-error: #d20f39;
+}
+
+::placeholder {
+    color: var(--body-color-muted);
+    opacity: 1; /* fix opacity in Firefox */
+}
+
+.channel-list-item .badge {
+	color: #7c7f93;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background: hsla(220, 23%, 95%, 0.40);
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    background: hsla(220, 23%, 95%, 1.00);
+    background: hsla(220, 23%, 95%, 0.50);
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+    background: hsla(220, 23%, 95%, 0.60);
+}
+
+html {
+    scrollbar-color: hsl(220, 23%, 95%) hsla(220, 23%, 95%, 0.10);
+    scrollbar-width: thin;
+}
+
+#loading .logo,
+#windows .logo {
+    display: none;
+}
+
+#loading .logo-inverted,
+#windows .logo-inverted {
+    display: inline-block;
+}
+
+#sidebar .logo-container {
+    padding-top: 10px;
+}
+
+#sidebar .logo-inverted {
+    height: 35px;
+}
+
+.jump-to-input .input {
+    background-color: var(--highlight-bg-color);
+    border: 1px solid var(--body-color-muted);
+}
+
+.jump-to-input .input::placeholder {
+  color: #4c4f69
+}
+.btn:active,
+.btn:focus,
+.input:focus {
+  	box-shadow: 0 0 0 3px rgba(136, 57, 239, 0.50);
+}
+
+.input:not(:disabled):focus, .input:not(:disabled):hover {
+  border-color: #8839ef
+}
+
+i.hostmask {
+    font-size: 90%;
+    font-style: normal;
+    opacity: 0.7;
+    color: #7287fd;
+}
+
+.irc-monospace,
+pre,
+code,
+kbd {
+    color: var(--body-color);
+    background-color: var(--highlight-bg-color);
+    border-color: var(--highlight-bg-color);
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.channel-list-item[data-type="lobby"],
+.channel-list-item[data-type="lobby"].active,
+.channel-list-item[data-type="lobby"]:hover {
+    color: #8839ef;
+}
+
+.channel-list-item.active,
+#footer button.active {
+    background-color: var(--highlight-bg-color);
+}
+
+#footer button {
+    color: #4c4f69;
+}
+
+.channel-list-item:hover {
+    background-color: #acb0be;
+}
+
+#chat .count:before,
+#chat .user-mode:before {
+    color: #9ca0b0;
+}
+
+#form #submit,
+#form #upload,
+#chat button.menu,
+#viewport .lt,
+#viewport .rt {
+    color: var(--body-color);
+}
+
+#chat .msg[data-type="topic"] .from::before,
+#chat .msg[data-type="mode_channel"] .from::before,
+#chat .msg[data-type="join"] .from::before {
+    color: var(--unread-marker-color);
+}
+
+#chat .msg[data-type="topic"] .from,
+#chat .msg[data-type="mode_channel"] .from,
+#chat .msg[data-type="join"] .from,
+#chat .msg[data-type="part"] .from,
+#chat .msg[data-type="quit"] .from {
+    color: #acb0be;
+}
+
+#chat .msg[data-type="part"] .from::before,
+#chat .msg[data-type="quit"] .from::before {
+    color: var(--background-error);
+}
+
+#chat .msg[data-type="action"] .content {
+    color: #fe640b;
+}
+
+#chat .msg[data-type="condensed"] .content,
+#chat .msg[data-type="away"] .content,
+#chat .msg[data-type="back"] .content,
+#chat .msg[data-type="join"] .content,
+#chat .msg[data-type="mode_channel"] .content,
+#chat .msg[data-type="part"] .content,
+#chat .msg[data-type="quit"] .content,
+#chat .msg[data-type="topic"] .content,
+#chat .msg[data-type="topic_set_by"] .content {
+    color: #bcc0cc;
+}
+#context-menu,
+.textcomplete-menu {
+    background-color: var(--window-bg-color);
+    border: 1px solid var(--background-light-color);
+    border-width: 0.5px;
+}
+
+.context-menu-item,
+.textcomplete-item {
+    transition: none;
+}
+
+.context-menu-divider {
+    border: 1px solid var(--background-light-color);
+    border-width: 0.5px;
+}
+
+#loading,
+#chat .userlist,
+#windows .window,
+body {
+    background-color: var(--body-bg-color);
+    color: var(--body-color);
+}
+
+#form,
+#viewport .lt::after,
+#chat .header,
+#chat .content,
+#chat .userlist {
+    border-color: var(--background-light-color);
+    color: var(--body-color);
+}
+
+#chat .header .topic {
+    color: #9ca0b0;
+}
+
+.context-menu-item,
+.textcomplete-item a {
+    color: var(--body-color);
+}
+
+#chat .action .content,
+#chat .action .from {
+    color: var(--highlight-color);
+}
+
+#chat .msg.self .content {
+    color: var(--body-color);
+}
+
+#chat .show-more .btn {
+    background: var(--unread-marker-color);
+    color: var(--body-bg-color);
+    border: 0;
+    border-radius: 0;
+    text-transform: uppercase;
+    transition: background 0.2s;
+}
+
+.btn-reconnect {
+    background: var(--background-error);
+    color: var(--body-color);
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+}
+
+#input,
+#windows #form .input,
+#form,
+#chat .userlist .count {
+    background-color: inherit;
+}
+
+.input {
+    background-color: var(--background-light-color);
+    color: var(--body-color);
+}
+
+/* Hide close button on channels, it is not used that frequently */
+#sidebar .chan.channel .close {
+    display: none;
+}
+
+#sidebar .chan.active {
+    background-color: var(--background-light-color);
+}
+
+#footer {
+    height: 43px;
+    line-height: 43px;
+}
+
+#footer .icon {
+    border-radius: 0;
+}
+
+.context-menu-item:focus,
+.context-menu-item:hover,
+.textcomplete-item:hover,
+.textcomplete-menu .active,
+#chat .userlist .user.active,
+#sidebar,
+#footer {
+    color: var(--body-color);
+    background-color: #ccd0da;
+}
+
+#chat .userlist .search,
+#windows #form .input {
+    border: 0;
+    color: var(--body-color);
+}
+
+form.message-search input {
+  background-color: #ccd0da
+}
+
+form.message-search input::placeholder {
+  color: #4c4f69
+}
+
+.user.color-1,
+.user.color-9,
+.user.color-17,
+.user.color-25 {
+    color: #d20f39;
+}
+
+.user.color-2,
+.user.color-10,
+.user.color-18,
+.user.color-26 {
+    color: #ea76cb;
+}
+
+.user.color-3,
+.user.color-11,
+.user.color-19,
+.user.color-27 {
+    color: #fe640b;
+}
+
+.user.color-4,
+.user.color-12,
+.user.color-20,
+.user.color-28 {
+    color: #df8e1d;
+}
+
+.user.color-5,
+.user.color-13,
+.user.color-21,
+.user.color-29 {
+    color: #40a02b;
+}
+
+.user.color-6,
+.user.color-14,
+.user.color-22,
+.user.color-30 {
+    color: #179299;
+}
+
+.user.color-7,
+.user.color-15,
+.user.color-23,
+.user.color-31 {
+    color: #1e66f5;
+}
+
+.user.color-8,
+.user.color-16,
+.user.color-24,
+.user.color-32 {
+    color: #8839ef;
+}
+
+#chat .msg[data-type="monospace_block"] .text,
+#chat .msg[data-type="motd"] .text,
+#chat .toggle-content {
+    background-color: var(--background-light-color);
+}
+
+#chat .toggle-content .body,
+#chat .toggle-text .body,
+#chat .toggle-type-error {
+    color: #9ca0b0;
+}
+
+#chat .time {
+    color: #acb0be;
+}
+
+#chat .channel .msg.highlight .time {
+    color: var(--body-color);
+}
+
+#chat .channel .highlight .toggle-content {
+    background-color: #9ca0b0;
+}
+
+#chat table.channel-list td {
+    color: var(--body-color);
+}
+
+#chat table.channel-list th,
+#chat table.ban-list th,
+#chat table.channel-list td,
+#chat table.ban-list td {
+    border-bottom-color: var(--background-light-color);
+}
+
+@media (max-width: 768px) {
+    #sidebar-overlay {
+        background: rgba(220, 224, 232, 0.80);
+    }
+}
+
+@media (max-width: 479px) {
+    #chat .message .from .user::before {
+        content: "<";
+    }
+
+    #chat .message .from .user::after {
+        content: ">";
+    }
+}
