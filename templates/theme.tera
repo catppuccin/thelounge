@@ -20,7 +20,7 @@ whiskers:
     --window-bg-color: #{{base.hex}};
     --body-color: #{{text.hex}};
     --body-color-muted: #{{overlay1.hex}};
-    --link-color: #{{mauve.hex}};
+    --link-color: #{{blue.hex}};
     --unread-marker-color: #{{green.hex}};
     --button-color: #{{mauve.hex}};
     --date-marker-color: #{{flamingo.hex}};
