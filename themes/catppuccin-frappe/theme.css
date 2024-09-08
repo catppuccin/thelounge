@@ -278,7 +278,7 @@ body {
 #sidebar,
 #footer {
     color: var(--body-color);
-    background-color: #414559;
+    background-color: #292c3c;
 }
 
 #chat .userlist .search,

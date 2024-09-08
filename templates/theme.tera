@@ -285,7 +285,7 @@ body {
 #sidebar,
 #footer {
     color: var(--body-color);
-    background-color: #{{surface0.hex}};
+    background-color: #{{mantle.hex}};
 }
 
 #chat .userlist .search,
