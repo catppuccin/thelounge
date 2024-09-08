@@ -120,15 +120,21 @@ kbd {
 
 .channel-list-item.active,
 #footer button.active {
-    background-color: var(--highlight-bg-color);
+    background-color: {{overlay2 | mod(opacity=0.3) | css_hsla}};
+    color: #{{text.hex}}
 }
 
 #footer button {
     color: #{{text.hex}};
 }
 
+span.tooltipeded {
+  background-color: #{{overlay2.hex}}
+}
+
 .channel-list-item:hover {
-    background-color: #{{surface2.hex}};
+    background-color: {{overlay2 | mod(opacity=0.2) | css_hsla}};
+    color: #{{text.hex}};
 }
 
 #chat .count:before,

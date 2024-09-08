@@ -113,15 +113,21 @@ kbd {
 
 .channel-list-item.active,
 #footer button.active {
-    background-color: var(--highlight-bg-color);
+    background-color: hsla(228, 17%, 64%, 0.30);
+    color: #cdd6f4
 }
 
 #footer button {
     color: #cdd6f4;
 }
 
+span.tooltipeded {
+  background-color: #9399b2
+}
+
 .channel-list-item:hover {
-    background-color: #585b70;
+    background-color: hsla(228, 17%, 64%, 0.20);
+    color: #cdd6f4;
 }
 
 #chat .count:before,
