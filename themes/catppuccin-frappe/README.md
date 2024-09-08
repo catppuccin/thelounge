@@ -12,26 +12,26 @@
 </p>
 
 <p align="center">
-	<img src="assets/preview.webp"/>
+	<img src="https://raw.githubusercontent.com/catppuccin/thelounge/main/assets/preview.webp"/>
 </p>
 
 ## Previews
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="assets/latte.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/thelounge/main/assets/latte.webp"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="assets/frappe.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/thelounge/main/assets/frappe.webp"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="assets/macchiato.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/thelounge/main/assets/macchiato.webp"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="assets/mocha.webp"/>
+<img src="https://raw.githubusercontent.com/catppuccin/thelounge/main/assets/mocha.webp"/>
 </details>
 
 ## Installation
@@ -40,16 +40,6 @@
 
 1. Copy the contents of `theme.css` from your desired flavor in `themes/catppuccin-{flavor}/`
 2. Paste it into your instance of `The Lounge` in Settings -> Appearance -> Custom Stylesheet
-
-### thelounge install
-
-1. Run `thelounge install @catppuccin/thelounge-theme-catppuccin-{flavor}` e.g.
-
-```bash
-thelounge install @catppuccin/thelounge-theme-catppuccin-mocha
-```
-
-2. Select the theme from your instance of `The Lounge` in Settings -> Appearance -> Theme
 
 ## 💝 Thanks to
 
