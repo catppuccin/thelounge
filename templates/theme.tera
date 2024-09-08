@@ -1,5 +1,12 @@
+---
+whiskers:
+  version: 2.4.0
+  matrix:
+    - flavor
+  filename: "themes/catppuccin-{{flavor.identifier}}/theme.css"
+---
 /*!
- * Catppuccin Mocha theme for TheLounge by hyperreal
+ * Catppuccin {{flavor.name}} theme for TheLounge by hyperreal
  *
  * Repo: https://github.com/catppuccin/thelounge/
  */
@@ -8,20 +15,20 @@
 ::-webkit-input-placeholder {
     color: var(--body-color-muted);
 }
-
 :root {
-    --body-bg-color: #1e1e2e;
-    --window-bg-color: #1e1e2e;
-    --body-color: #cdd6f4;
-    --body-color-muted: #313244;
-    --link-color: #8be9fd;
-    --unread-marker-color: #a6e3a1;
-    --date-marker-color: #f2cdcd;
-    --highlight-bg-color: #45475a;
-    --highlight-color: #cba6f7;
-    --highlight-border-color: #cba6f7;
-    --background-light-color: #45475a;
-    --background-error: #f55;
+    --body-bg-color: #{{base.hex}};
+    --window-bg-color: #{{base.hex}};
+    --body-color: #{{text.hex}};
+    --body-color-muted: #{{overlay1.hex}};
+    --link-color: #{{blue.hex}};
+    --unread-marker-color: #{{green.hex}};
+    --button-color: #{{mauve.hex}};
+    --date-marker-color: #{{flamingo.hex}};
+    --highlight-bg-color: #{{surface1.hex}};
+    --highlight-color: #{{mauve.hex}};
+    --highlight-border-color: #{{mauve.hex}};
+    --background-light-color: #{{surface1.hex}};
+    --background-error: #{{red.hex}};
 }
 
 ::placeholder {
@@ -29,20 +36,25 @@
     opacity: 1; /* fix opacity in Firefox */
 }
 
+.channel-list-item .badge {
+	color: #{{overlay2.hex}};
+}
+
 ::-webkit-scrollbar-thumb:vertical {
-    background: hsl(240, 21%, 15%, 0.4);
+    background: {{base | mod(opacity=0.4) | css_hsla}};
 }
 
 ::-webkit-scrollbar-thumb:vertical:hover {
-    background: hsla(240, 21%, 15%, 0.5);
+    background: {{css_hsla(color=base)}};
+    background: {{base | mod(opacity=0.5) | css_hsla}};
 }
 
 ::-webkit-scrollbar-thumb:vertical:active {
-    background: hsla(240, 21%, 15%, 0.6);
+    background: {{base | mod(opacity=0.6) | css_hsla}};
 }
 
 html {
-    scrollbar-color: hsl(240, 21%, 15%) hsla(240, 21%, 15%, 0.1);
+    scrollbar-color: {{css_hsl(color=base)}} {{base | mod(opacity=0.1) | css_hsla}};
     scrollbar-width: thin;
 }
 
@@ -69,11 +81,24 @@ html {
     border: 1px solid var(--body-color-muted);
 }
 
+.jump-to-input .input::placeholder {
+  color: #{{text.hex}}
+}
+.btn:active,
+.btn:focus,
+.input:focus {
+  	box-shadow: 0 0 0 3px {{mauve | mod(opacity=0.5) | css_rgba}};
+}
+
+.input:not(:disabled):focus, .input:not(:disabled):hover {
+  border-color: #{{mauve.hex}}
+}
+
 i.hostmask {
     font-size: 90%;
     font-style: normal;
     opacity: 0.7;
-    color: #b4befe;
+    color: #{{lavender.hex}};
 }
 
 .irc-monospace,
@@ -87,18 +112,34 @@ kbd {
     text-shadow: none;
 }
 
+.channel-list-item[data-type="lobby"],
+.channel-list-item[data-type="lobby"].active,
+.channel-list-item[data-type="lobby"]:hover {
+    color: #{{mauve.hex}};
+}
+
 .channel-list-item.active,
 #footer button.active {
-    background-color: var(--highlight-bg-color);
+    background-color: {{overlay2 | mod(opacity=0.3) | css_hsla}};
+    color: #{{text.hex}}
+}
+
+#footer button {
+    color: #{{text.hex}};
+}
+
+span.tooltipeded {
+  background-color: #{{overlay2.hex}}
 }
 
 .channel-list-item:hover {
-    background-color: #585b70;
+    background-color: {{overlay2 | mod(opacity=0.2) | css_hsla}};
+    color: #{{text.hex}};
 }
 
 #chat .count:before,
 #chat .user-mode:before {
-    color: #6c7086;
+    color: #{{overlay0.hex}};
 }
 
 #form #submit,
@@ -120,7 +161,7 @@ kbd {
 #chat .msg[data-type="join"] .from,
 #chat .msg[data-type="part"] .from,
 #chat .msg[data-type="quit"] .from {
-    color: #585b70;
+    color: #{{surface2.hex}};
 }
 
 #chat .msg[data-type="part"] .from::before,
@@ -129,7 +170,7 @@ kbd {
 }
 
 #chat .msg[data-type="action"] .content {
-    color: #fab387;
+    color: #{{peach.hex}};
 }
 
 #chat .msg[data-type="condensed"] .content,
@@ -141,7 +182,7 @@ kbd {
 #chat .msg[data-type="quit"] .content,
 #chat .msg[data-type="topic"] .content,
 #chat .msg[data-type="topic_set_by"] .content {
-    color: #45475a;
+    color: #{{surface1.hex}};
 }
 #context-menu,
 .textcomplete-menu {
@@ -178,7 +219,7 @@ body {
 }
 
 #chat .header .topic {
-    color: #6c7086;
+    color: #{{overlay0.hex}};
 }
 
 .context-menu-item,
@@ -250,7 +291,7 @@ body {
 #sidebar,
 #footer {
     color: var(--body-color);
-    background-color: #313244;
+    background-color: #{{mantle.hex}};
 }
 
 #chat .userlist .search,
@@ -259,60 +300,68 @@ body {
     color: var(--body-color);
 }
 
-#chat.colored-nicks .user.color-1,
-#chat.colored-nicks .user.color-9,
-#chat.colored-nicks .user.color-17,
-#chat.colored-nicks .user.color-25 {
-    color: #f38ba8;
+form.message-search input {
+  background-color: #{{surface0.hex}}
 }
 
-#chat.colored-nicks .user.color-2,
-#chat.colored-nicks .user.color-10,
-#chat.colored-nicks .user.color-18,
-#chat.colored-nicks .user.color-26 {
-    color: #f5c2e7;
+form.message-search input::placeholder {
+  color: #{{text.hex}}
 }
 
-#chat.colored-nicks .user.color-3,
-#chat.colored-nicks .user.color-11,
-#chat.colored-nicks .user.color-19,
-#chat.colored-nicks .user.color-27 {
-    color: #fab387;
+.user.color-1,
+.user.color-9,
+.user.color-17,
+.user.color-25 {
+    color: #{{red.hex}};
 }
 
-#chat.colored-nicks .user.color-4,
-#chat.colored-nicks .user.color-12,
-#chat.colored-nicks .user.color-20,
-#chat.colored-nicks .user.color-28 {
-    color: #f9e2af;
+.user.color-2,
+.user.color-10,
+.user.color-18,
+.user.color-26 {
+    color: #{{pink.hex}};
 }
 
-#chat.colored-nicks .user.color-5,
-#chat.colored-nicks .user.color-13,
-#chat.colored-nicks .user.color-21,
-#chat.colored-nicks .user.color-29 {
-    color: #a6e3a1;
+.user.color-3,
+.user.color-11,
+.user.color-19,
+.user.color-27 {
+    color: #{{peach.hex}};
 }
 
-#chat.colored-nicks .user.color-6,
-#chat.colored-nicks .user.color-14,
-#chat.colored-nicks .user.color-22,
-#chat.colored-nicks .user.color-30 {
-    color: #94e2d5;
+.user.color-4,
+.user.color-12,
+.user.color-20,
+.user.color-28 {
+    color: #{{yellow.hex}};
 }
 
-#chat.colored-nicks .user.color-7,
-#chat.colored-nicks .user.color-15,
-#chat.colored-nicks .user.color-23,
-#chat.colored-nicks .user.color-31 {
-    color: #89b4fa;
+.user.color-5,
+.user.color-13,
+.user.color-21,
+.user.color-29 {
+    color: #{{green.hex}};
 }
 
-#chat.colored-nicks .user.color-8,
-#chat.colored-nicks .user.color-16,
-#chat.colored-nicks .user.color-24,
-#chat.colored-nicks .user.color-32 {
-    color: #cba6f7;
+.user.color-6,
+.user.color-14,
+.user.color-22,
+.user.color-30 {
+    color: #{{teal.hex}};
+}
+
+.user.color-7,
+.user.color-15,
+.user.color-23,
+.user.color-31 {
+    color: #{{blue.hex}};
+}
+
+.user.color-8,
+.user.color-16,
+.user.color-24,
+.user.color-32 {
+    color: #{{mauve.hex}};
 }
 
 #chat .msg[data-type="monospace_block"] .text,
@@ -324,11 +373,11 @@ body {
 #chat .toggle-content .body,
 #chat .toggle-text .body,
 #chat .toggle-type-error {
-    color: #6c7086;
+    color: #{{overlay0.hex}};
 }
 
 #chat .time {
-    color: #585b70;
+    color: #{{surface2.hex}};
 }
 
 #chat .channel .msg.highlight .time {
@@ -336,7 +385,7 @@ body {
 }
 
 #chat .channel .highlight .toggle-content {
-    background-color: #6c7086;
+    background-color: #{{overlay0.hex}};
 }
 
 #chat table.channel-list td {
@@ -350,16 +399,9 @@ body {
     border-bottom-color: var(--background-light-color);
 }
 
-/* Increase contrast of some IRC colors */
-
-/* .irc-fg2 { color: #007ae6; }
-.irc-fg5 { color: #e969a7; }
-.irc-fg6 { color: #d20ff0; }
-.irc-fg12 { color: #66b2ff; } */
-
 @media (max-width: 768px) {
     #sidebar-overlay {
-        background: rgba(17, 17, 27, 0.8);
+        background: {{crust | mod(opacity=0.8) | css_rgba}};
     }
 }
 

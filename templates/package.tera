@@ -1,0 +1,31 @@
+---
+whiskers:
+  version: 2.4.0
+  matrix:
+    - flavor
+  filename: "themes/catppuccin-{{flavor.identifier}}/package.json"
+---
+{
+  "name": "@catppuccin/thelounge-{{flavor.identifier}}",
+  "version": "2.0.0",
+  "description": "Soothing pastel theme for The Lounge",
+  "main": "package.json",
+  "thelounge": {
+    "name": "Catppuccin {{flavor.name}}",
+    "type": "theme",
+    "css": "theme.css"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/catppuccin/thelounge",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catppuccin/thelounge.git"
+  },
+  "keywords": [
+    "thelounge",
+    "thelounge-theme"
+  ],
+  "bugs": {
+    "url": "https://github.com/catppuccin/thelounge/issues"
+  }
+}
