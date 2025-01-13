@@ -380,11 +380,11 @@ form.message-search input::placeholder {
     color: #{{surface2.hex}};
 }
 
-#chat .channel .msg.highlight .time {
+#chat .chat-view[data-type=channel] .msg.highlight .time {
     color: var(--body-color);
 }
 
-#chat .channel .highlight .toggle-content {
+#chat .chat-view[data-type=channel] .highlight .toggle-content {
     background-color: #{{overlay0.hex}};
 }
 
