@@ -182,7 +182,7 @@ span.tooltipeded {
 #chat .msg[data-type="quit"] .content,
 #chat .msg[data-type="topic"] .content,
 #chat .msg[data-type="topic_set_by"] .content {
-    color: #{{surface1.hex}};
+    color: #{{overlay0.hex}};
 }
 #context-menu,
 .textcomplete-menu {
