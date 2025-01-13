@@ -223,7 +223,7 @@ body {
 }
 
 .context-menu-item,
-.textcomplete-item a {
+.textcomplete-item {
     color: var(--body-color);
 }
 
