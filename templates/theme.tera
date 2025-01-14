@@ -143,7 +143,9 @@ span.tooltipeded {
 }
 
 #chat .count:before,
-#chat .user-mode:before {
+#chat .user-mode:before,
+#chat button.mentions,
+#chat form.message-search button {
     color: #{{overlay0.hex}};
 }
 
