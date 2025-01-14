@@ -137,6 +137,11 @@ span.tooltipeded {
     color: #{{text.hex}};
 }
 
+.channel-list-item.not-connected,
+.channel-list-item.parted-channel {
+    color: #{{maroon.hex}};
+}
+
 #chat .count:before,
 #chat .user-mode:before {
     color: #{{overlay0.hex}};
@@ -184,6 +189,12 @@ span.tooltipeded {
 #chat .msg[data-type="topic_set_by"] .content {
     color: #{{overlay0.hex}};
 }
+
+#chat .msg[data-type="error"] .content,
+#chat .msg[data-type="error"] .from {
+    color: #{{maroon.hex}};
+}
+
 #context-menu,
 .textcomplete-menu {
     background-color: var(--window-bg-color);
