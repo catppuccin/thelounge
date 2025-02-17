@@ -130,8 +130,15 @@ span.tooltipeded {
     color: #cdd6f4;
 }
 
+.channel-list-item.not-connected,
+.channel-list-item.parted-channel {
+    color: #eba0ac;
+}
+
 #chat .count:before,
-#chat .user-mode:before {
+#chat .user-mode:before,
+#chat button.mentions,
+#chat form.message-search button {
     color: #6c7086;
 }
 
@@ -175,8 +182,14 @@ span.tooltipeded {
 #chat .msg[data-type="quit"] .content,
 #chat .msg[data-type="topic"] .content,
 #chat .msg[data-type="topic_set_by"] .content {
-    color: #45475a;
+    color: #6c7086;
 }
+
+#chat .msg[data-type="error"] .content,
+#chat .msg[data-type="error"] .from {
+    color: #eba0ac;
+}
+
 #context-menu,
 .textcomplete-menu {
     background-color: var(--window-bg-color);
@@ -216,7 +229,7 @@ body {
 }
 
 .context-menu-item,
-.textcomplete-item a {
+.textcomplete-item {
     color: var(--body-color);
 }
 
@@ -373,11 +386,11 @@ form.message-search input::placeholder {
     color: #585b70;
 }
 
-#chat .channel .msg.highlight .time {
+#chat .chat-view[data-type=channel] .msg.highlight .time {
     color: var(--body-color);
 }
 
-#chat .channel .highlight .toggle-content {
+#chat .chat-view[data-type=channel] .highlight .toggle-content {
     background-color: #6c7086;
 }
 
