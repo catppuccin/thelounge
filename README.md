@@ -36,6 +36,19 @@
 
 ## Installation
 
+### npm Package
+
+If you are using The Lounge [4.5.0](https://github.com/thelounge/thelounge/releases/tag/v4.5.0) or newer, you can install the npm package of your desired Catppuccin flavor with The Lounge's command line.
+
+```Bash
+thelounge install @catppuccin/thelounge-latte
+thelounge install @catppuccin/thelounge-frappe
+thelounge install @catppuccin/thelounge-macchiato
+thelounge install @catppuccin/thelounge-mocha
+```
+
+After installing the npm package, visit your instance of The Lounge, go to Settings -> Appearance -> Theme, and select your desired Catppuccin flavor from the drop-down menu.
+
 ### Manually
 
 1. Copy the contents of `theme.css` from your desired flavor in `themes/catppuccin-{flavor}/`
