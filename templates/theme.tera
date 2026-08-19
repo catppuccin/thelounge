@@ -128,7 +128,7 @@ kbd {
     color: #{{text.hex}};
 }
 
-span.tooltipeded {
+span.tooltipped {
   background-color: #{{overlay2.hex}}
 }
 
