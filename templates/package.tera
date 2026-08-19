@@ -1,17 +1,17 @@
 ---
 whiskers:
-  version: 2.4.0
+  version: "^2.9.0"
   matrix:
     - flavor
-  filename: "themes/catppuccin-{{flavor.identifier}}/package.json"
+  filename: "themes/catppuccin-{{ flavor.identifier }}/package.json"
 ---
 {
-  "name": "@catppuccin/thelounge-{{flavor.identifier}}",
+  "name": "@catppuccin/thelounge-{{ flavor.identifier }}",
   "version": "2.0.0",
   "description": "Soothing pastel theme for The Lounge",
   "main": "package.json",
   "thelounge": {
-    "name": "Catppuccin {{flavor.name}}",
+    "name": "Catppuccin {{ flavor.name }}",
     "type": "theme",
     "css": "theme.css"
   },
