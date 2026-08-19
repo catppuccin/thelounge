@@ -1,12 +1,13 @@
 ---
 whiskers:
-  version: 2.4.0
+  version: "^2.9.0"
   matrix:
     - flavor
-  filename: "themes/catppuccin-{{flavor.identifier}}/theme.css"
+  filename: "themes/catppuccin-{{ flavor.identifier }}/theme.css"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
 ---
 /*!
- * Catppuccin {{flavor.name}} theme for TheLounge by hyperreal
+ * Catppuccin {{ flavor.name }} theme for TheLounge by hyperreal
  *
  * Repo: https://github.com/catppuccin/thelounge/
  */
@@ -16,19 +17,19 @@ whiskers:
     color: var(--body-color-muted);
 }
 :root {
-    --body-bg-color: #{{base.hex}};
-    --window-bg-color: #{{base.hex}};
-    --body-color: #{{text.hex}};
-    --body-color-muted: #{{overlay1.hex}};
-    --link-color: #{{blue.hex}};
-    --unread-marker-color: #{{green.hex}};
-    --button-color: #{{mauve.hex}};
-    --date-marker-color: #{{flamingo.hex}};
-    --highlight-bg-color: #{{surface1.hex}};
-    --highlight-color: #{{mauve.hex}};
-    --highlight-border-color: #{{mauve.hex}};
-    --background-light-color: #{{surface1.hex}};
-    --background-error: #{{red.hex}};
+    --body-bg-color: {{ base.hex }};
+    --window-bg-color: {{ base.hex }};
+    --body-color: {{ text.hex }};
+    --body-color-muted: {{ overlay1.hex }};
+    --link-color: {{ blue.hex }};
+    --unread-marker-color: {{ green.hex }};
+    --button-color: {{ mauve.hex }};
+    --date-marker-color: {{ flamingo.hex }};
+    --highlight-bg-color: {{ surface1.hex }};
+    --highlight-color: {{ mauve.hex }};
+    --highlight-border-color: {{ mauve.hex }};
+    --background-light-color: {{ surface1.hex }};
+    --background-error: {{ red.hex }};
 }
 
 ::placeholder {
@@ -37,24 +38,24 @@ whiskers:
 }
 
 .channel-list-item .badge {
-	color: #{{overlay2.hex}};
+	color: {{ overlay2.hex }};
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-    background: {{base | mod(opacity=0.4) | css_hsla}};
+    background: {{base | mod(opacity=0.4) | css_hsla }};
 }
 
 ::-webkit-scrollbar-thumb:vertical:hover {
-    background: {{css_hsla(color=base)}};
-    background: {{base | mod(opacity=0.5) | css_hsla}};
+    background: {{css_hsla(color=base) }};
+    background: {{base | mod(opacity=0.5) | css_hsla }};
 }
 
 ::-webkit-scrollbar-thumb:vertical:active {
-    background: {{base | mod(opacity=0.6) | css_hsla}};
+    background: {{base | mod(opacity=0.6) | css_hsla }};
 }
 
 html {
-    scrollbar-color: {{css_hsl(color=base)}} {{base | mod(opacity=0.1) | css_hsla}};
+    scrollbar-color: {{css_hsl(color=base) }} {{base | mod(opacity=0.1) | css_hsla }};
     scrollbar-width: thin;
 }
 
@@ -82,23 +83,23 @@ html {
 }
 
 .jump-to-input .input::placeholder {
-  color: #{{text.hex}}
+  color: {{ text.hex }}
 }
 .btn:active,
 .btn:focus,
 .input:focus {
-  	box-shadow: 0 0 0 3px {{mauve | mod(opacity=0.5) | css_rgba}};
+  	box-shadow: 0 0 0 3px {{mauve | mod(opacity=0.5) | css_rgba }};
 }
 
 .input:not(:disabled):focus, .input:not(:disabled):hover {
-  border-color: #{{mauve.hex}}
+  border-color: {{ mauve.hex }}
 }
 
 i.hostmask {
     font-size: 90%;
     font-style: normal;
     opacity: 0.7;
-    color: #{{lavender.hex}};
+    color: {{ lavender.hex }};
 }
 
 .irc-monospace,
@@ -115,38 +116,38 @@ kbd {
 .channel-list-item[data-type="lobby"],
 .channel-list-item[data-type="lobby"].active,
 .channel-list-item[data-type="lobby"]:hover {
-    color: #{{mauve.hex}};
+    color: {{ mauve.hex }};
 }
 
 .channel-list-item.active,
 #footer button.active {
-    background-color: {{overlay2 | mod(opacity=0.3) | css_hsla}};
-    color: #{{text.hex}}
+    background-color: {{overlay2 | mod(opacity=0.3) | css_hsla }};
+    color: {{ text.hex }}
 }
 
 #footer button {
-    color: #{{text.hex}};
+    color: {{ text.hex }};
 }
 
 span.tooltipeded {
-  background-color: #{{overlay2.hex}}
+  background-color: {{ overlay2.hex }}
 }
 
 .channel-list-item:hover {
-    background-color: {{overlay2 | mod(opacity=0.2) | css_hsla}};
-    color: #{{text.hex}};
+    background-color: {{overlay2 | mod(opacity=0.2) | css_hsla }};
+    color: {{ text.hex }};
 }
 
 .channel-list-item.not-connected,
 .channel-list-item.parted-channel {
-    color: #{{maroon.hex}};
+    color: {{ maroon.hex }};
 }
 
 #chat .count:before,
 #chat .user-mode:before,
 #chat button.mentions,
 #chat form.message-search button {
-    color: #{{overlay0.hex}};
+    color: {{ overlay0.hex }};
 }
 
 #form #submit,
@@ -168,7 +169,7 @@ span.tooltipeded {
 #chat .msg[data-type="join"] .from,
 #chat .msg[data-type="part"] .from,
 #chat .msg[data-type="quit"] .from {
-    color: #{{surface2.hex}};
+    color: {{ surface2.hex }};
 }
 
 #chat .msg[data-type="part"] .from::before,
@@ -177,7 +178,7 @@ span.tooltipeded {
 }
 
 #chat .msg[data-type="action"] .content {
-    color: #{{peach.hex}};
+    color: {{ peach.hex }};
 }
 
 #chat .msg[data-type="condensed"] .content,
@@ -189,12 +190,12 @@ span.tooltipeded {
 #chat .msg[data-type="quit"] .content,
 #chat .msg[data-type="topic"] .content,
 #chat .msg[data-type="topic_set_by"] .content {
-    color: #{{overlay0.hex}};
+    color: {{ overlay0.hex }};
 }
 
 #chat .msg[data-type="error"] .content,
 #chat .msg[data-type="error"] .from {
-    color: #{{maroon.hex}};
+    color: {{ maroon.hex }};
 }
 
 #context-menu,
@@ -232,7 +233,7 @@ body {
 }
 
 #chat .header .topic {
-    color: #{{overlay0.hex}};
+    color: {{ overlay0.hex }};
 }
 
 .context-menu-item,
@@ -304,7 +305,7 @@ body {
 #sidebar,
 #footer {
     color: var(--body-color);
-    background-color: #{{mantle.hex}};
+    background-color: {{ mantle.hex }};
 }
 
 #chat .userlist .search,
@@ -314,67 +315,67 @@ body {
 }
 
 form.message-search input {
-  background-color: #{{surface0.hex}}
+  background-color: {{ surface0.hex }}
 }
 
 form.message-search input::placeholder {
-  color: #{{text.hex}}
+  color: {{ text.hex }}
 }
 
 .user.color-1,
 .user.color-9,
 .user.color-17,
 .user.color-25 {
-    color: #{{red.hex}};
+    color: {{ red.hex }};
 }
 
 .user.color-2,
 .user.color-10,
 .user.color-18,
 .user.color-26 {
-    color: #{{pink.hex}};
+    color: {{ pink.hex }};
 }
 
 .user.color-3,
 .user.color-11,
 .user.color-19,
 .user.color-27 {
-    color: #{{peach.hex}};
+    color: {{ peach.hex }};
 }
 
 .user.color-4,
 .user.color-12,
 .user.color-20,
 .user.color-28 {
-    color: #{{yellow.hex}};
+    color: {{ yellow.hex }};
 }
 
 .user.color-5,
 .user.color-13,
 .user.color-21,
 .user.color-29 {
-    color: #{{green.hex}};
+    color: {{ green.hex }};
 }
 
 .user.color-6,
 .user.color-14,
 .user.color-22,
 .user.color-30 {
-    color: #{{teal.hex}};
+    color: {{ teal.hex }};
 }
 
 .user.color-7,
 .user.color-15,
 .user.color-23,
 .user.color-31 {
-    color: #{{blue.hex}};
+    color: {{ blue.hex }};
 }
 
 .user.color-8,
 .user.color-16,
 .user.color-24,
 .user.color-32 {
-    color: #{{mauve.hex}};
+    color: {{ mauve.hex }};
 }
 
 #chat .msg[data-type="monospace_block"] .text,
@@ -386,11 +387,11 @@ form.message-search input::placeholder {
 #chat .toggle-content .body,
 #chat .toggle-text .body,
 #chat .toggle-type-error {
-    color: #{{overlay0.hex}};
+    color: {{ overlay0.hex }};
 }
 
 #chat .time {
-    color: #{{surface2.hex}};
+    color: {{ surface2.hex }};
 }
 
 #chat .chat-view[data-type=channel] .msg.highlight .time {
@@ -398,7 +399,7 @@ form.message-search input::placeholder {
 }
 
 #chat .chat-view[data-type=channel] .highlight .toggle-content {
-    background-color: #{{overlay0.hex}};
+    background-color: {{ overlay0.hex }};
 }
 
 #chat table.channel-list td {
@@ -414,7 +415,7 @@ form.message-search input::placeholder {
 
 @media (max-width: 768px) {
     #sidebar-overlay {
-        background: {{crust | mod(opacity=0.8) | css_rgba}};
+        background: {{crust | mod(opacity=0.8) | css_rgba }};
     }
 }
 
